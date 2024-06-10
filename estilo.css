@@ -59,42 +59,17 @@ a {
     cursor: pointer;
     display: none;
 }
-.en{
-    color: #333;;
-}
-.es{
-    color: #007add;
-}
-.check{
-    position:relative;
-    width:50px;
-}
-.check:before{
-    content:'';
-    position:absolute;
-    width:50px;
-    height: 25px;
-    background: #333;
-    border-radius: 25px;
-}
-.check:after{
-    content: '';
-    position: absolute;
-    width: 25px;
-    width: 25px;
-    background: #fff;
-    border-radius: 25px;
-    transition: 0.25s;
-    border: 2px solid #333;
+*{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
-.check:checked::after{
-    left: 25px;
-    border: 2px solid #007add;
+.select{
+    padding: 20px;
+    margin: 0 20px;
 }
-.check:checked::before{
-    background-color: #007add;
-}
+
 /* SECCION I N I C I O */
 .inicio{
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
@@ -251,9 +226,9 @@ a {
 }
 /* SECCION S K I L L S */
 .skills{
-    background-color: #007add;
+    background-color: #e2e2e2;
     color: #fff;
-    padding: 120px 40px;
+    padding: 120px 50px;
 }
 .skills .contenido-seccion.contenedor-header{
     display: flex
@@ -265,7 +240,7 @@ a {
     font-size: 120px;
     font-family: 'Righteous';
     text-align: center;
-    padding: 50px 20;
+    padding: 40px 19;
 
 }
 .skills .fila{
