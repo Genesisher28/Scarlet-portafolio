@@ -4,52 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <litle>Imagen</litle>
-    <litle>Texto</litle>
-    <litle>Centrar Imagen</litle>
-    <little>Alinear Imagen derecha</little>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portafolio</title>
-    <litle>Idiomas</litle>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estilo.css">
+    <script>
+        function cambiarIdioma(idioma) {
+            const elementos = document.querySelectorAll('[data-translate]');
+            elementos.forEach(el => {
+                el.textContent = el.getAttribute(`data-translate-${idioma}`);
+            });
+        }
+    </script>
 </head>
 <body>
-<!--MENU ENCABEZADO-->
+    <!--MENU ENCABEZADO-->
     <div class="contenedor-header">
         <header>
             <div class="logo">
-            <img src="img/_Marca_.png"alt=""width="120px">          
-            <div class="logo">
-            </div>
-               <a><class=""></Logo4></a> 
-
+                <img src="img/_Marca_.png" alt="Logo" width="120px">
             </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="inicio" onclick="seleccionar()">Inicio</a></li> 
-                    <li><a href="Sobre Mí" onclick="seleccionar()">Sobre Mí</a></li> 
-                    <li><a href="Habilidades " onclick="seleccionar()">Habilidades</a></li> 
-                    <li><a href="Casos de Exito" onclick="seleccionar()">Casos de Exito</a></li>  
-                    <div class=".select">
-                      <select name="" id="">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                    </select>  
-                    </div>
-                    
-                    
-                    
-                    <img class="Alinear Imagen derecha" src="img/Marca 3.png" alt=""width="101px">
-            
-                    
-
-                    <!-- #<li><a href="#skills" onclick="seleccionar()">SKILLS</a></li> -->
-                    <!-- #<li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li> -->
-                    <!-- #<li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li> -->
-                     <!-- #<li><a href="#intereses" onclick="seleccionar()">INTERESES</a></li># -->
-                     <!-- #<li><a href="#intereses" onclick="seleccionar()">INTERESES</a></li># -->
-                    <!-- #<li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li> -->
+                    <li><a href="#inicio" class="seleccion" data-translate data-translate-es="Inicio" data-translate-en="Home" onclick="seleccionar()">Inicio</a></li> 
+                    <li><a href="#sobremi" class="seleccion" data-translate data-translate-es="Sobre Mí" data-translate-en="About Me" onclick="seleccionar()">Sobre Mí</a></li> 
+                    <li><a href="#skills" class="seleccion" data-translate data-translate-es="Habilidades" data-translate-en="Skills" onclick="seleccionar()">Habilidades</a></li> 
+                    <li><a href="#casos" class="seleccion" data-translate data-translate-es="Casos de Éxito" data-translate-en="Success Stories" onclick="seleccionar()">Casos de Éxito</a></li>  
                 </ul>
+                <div class="select">
+                    <select onchange="cambiarIdioma(this.value)">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>  
+                </div>
             </nav>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
@@ -61,18 +47,12 @@
     <section id="inicio" class="inicio">
         <div class="contenido-banner">
             <div class="contenedor-img">
-                <img src="img/Perfil.jpeg" alt=""width="80">
+                <img src="img/Perfil.jpeg" alt="Perfil" width="80">
             </div>
             <h1>Génesis Hernández</h1>
-            <h2>Estudiante ingenieria en sistemas y redes informáticas</h2>
-
-            
+            <h2 class="descripcion" data-translate data-translate-es="Estudiante ingeniería en sistemas y redes informáticas" data-translate-en="Computer Systems and Network Engineering Student">Estudiante ingeniería en sistemas y redes informáticas</h2>
             <div class="redes">
-                <!-- <a href="#"><i class="fa-brands fa-facebook-f"></i></a> -->
-                <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-                <!-- <a href="#"><i class="fa-brands fa-skype"></i></a> -->
                 <a href="https://www.linkedin.com/in/genesisscarlet/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <!-- <a href="#"><i class="fa-solid fa-rss"></i></a> -->
             </div>
         </div>
     </section>
@@ -80,358 +60,129 @@
     <!-- SECCION SOBRE MI -->
     <section id="sobremi" class="sobremi">
         <div class="contenido-seccion">
-            <h2>Sobre Mí</h2>
-            <p><span>Hola soy, Génesis Hernández </span>una apasionada estudiante de 20 años de la Universidad Gerardo Barrios, donde actualmente estoy completando el séptimo ciclo de Ingeniería en Sistemas y Redes Informáticas. Además de mi dedicación académica, me gusta explorar nuevas tecnologías para mi desempeño como profesional,
-                me identifico como una persona alegre, divertida, trabajadora, dedicada a mi carrera, disfruto del baile y pasar tiempo en familia y amigos quienes me inspiran a seguir mis metas y objetivos con determinación para ser una profesional exitosa,
-                mi objetivo es especializarme en ciberseguridad y liderar equipos de desarrollo de software para contribuir a soluciones tecnológicas e innovadoras, poseo habilidades como el análisis, lo cual me permite evaluar de una manera efectiva objetivos y propuestas en el desarrollo de un proyecto académico, estoy comprometida con mi crecimiento tanto en mis habilidades como profesional y académico.
-                <p>
-                <a href="img/curriculum Español_2 (1).pdf" download="curriculum.pdf">
-                <button>
-                    Descargar CV <i class="fa-solid fa-download"></i>
-                </button>       
+            <h2 class="titulo" data-translate data-translate-es="Sobre Mí" data-translate-en="About Me">Sobre Mí</h2>
+            <p>
+                <span data-translate data-translate-es="Hola soy, Génesis Hernández " data-translate-en="Hello, I am Genesis Hernandez">Hola soy, Génesis Hernández </span>
+                <span data-translate data-translate-es="una apasionada estudiante de 20 años de la Universidad Gerardo Barrios, donde actualmente estoy completando el séptimo ciclo de Ingeniería en Sistemas y Redes Informáticas." data-translate-en="a passionate 20-year-old student at Gerardo Barrios University, currently completing the seventh cycle of Systems and Network Engineering.">una apasionada estudiante de 20 años de la Universidad Gerardo Barrios, donde actualmente estoy completando el séptimo ciclo de Ingeniería en Sistemas y Redes Informáticas.</span>
+            </p>
+            <a href="img/curriculum Español_2 (1).pdf" download="curriculum.pdf">
+                <button class="boton-descargar" data-translate data-translate-es="Descargar CV" data-translate-en="Download CV">Descargar CV <i class="fa-solid fa-download"></i></button>       
+            </a>
+        </div>
+    </section>
 
-            <!-- <div class="fila"># -->
-                <!-- Datos Personales -->
-                <!-- <div class="col"># -->
-                    <!-- <h3>#</h3> -->
-                    <ul>
-                        <!-- <li>
-                            <strong>Cumpleaños</strong>
-                            28-07-2003
-                        </li> -->
-                        <!--<li>-->
-                            <!--<strong>#</strong> -->
-                            <!-- +503 7636 7578# -->
-                        <!-- </li># -->
-                        <!-- <li># -->
-                            <!--<strong>Email#</strong>
-                            USIS041221@gmail.com#-->
-                        <!-- </li># -->
-                        <!-- <li>
-                            <strong>Website</strong>
-                            www.example.com
-                        </li> -->
-                        <!-- <li>
-                            <strong>Dirección</strong>
-                            123 San Luis, Argentina
-                        </li> -->
-                        <!-- <li># -->
-                            <!-- <strong>Cargo#</strong> -->
-                            <!-- <span>Estudiante#</span> -->
-                        <!-- </li># -->
-                    </ul>
-                <!-- </div># -->
-
-                <!--intereses-->
-                <div class="col">
-                     <h3>Intereses</h3>
-                    <div class="contenedor-intereses">
-                         <div class="interes">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>JUEGOS</span>
-                        </div> 
-                        <!-- <div class="interes"># -->
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
-                        <!-- </div># -->
-                        <!-- <div class="interes"># -->
-                            <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
-                        <!-- </div># -->
-                        <!-- <div class="interes">
-                            <i class="fa-brands fa-apple"></i>
-                            <span>MAC OS</span>
-                        </div> -->
-                        <!-- <div class="interes"># -->
-                            <i class="fa-solid fa-person-hiking"></i>
-                            <span>DEPORTE</span>
-                        <!-- </div># -->
-                        <!-- <div class="interes"># -->
-                            <!-- <i class="fa-solid fa-book"></i># -->
-                            <!-- <span>LIBROS</span># -->
-                        <!-- </div># -->
-                        <!-- <div class="interes">
-                            <i class="fa-solid fa-car"></i>
-                            <span>AUTOS</span>
-                        </div> -->
-                        <!-- <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>FOTOS</span>
-                        </div> -->
-                        
-                    <!-- </div># -->
-                <!-- </div># -->
-            <!-- </div># -->
-            <!-- <button>
-                Descargar CV <i class="fa-solid fa-download"></i>
-                <span class="overlay"></span>
-            </button> -->
-        <!-- </div># -->
-    <!-- </section># -->
-
-    <!-- SECCION SKILLS -->
-    <!-- <section class="skills" id="skills"> -->
+    <!-- SECCION HABILIDADES -->
+    <section id="skills" class="skills">
         <div class="contenido-seccion">
-            <h2>Habilidades</h2>
+            <h2 class="titulo" data-translate data-translate-es="Habilidades" data-translate-en="Skills">Habilidades</h2>
             <div class="fila">
-                
                 <div class="col">
-                    <h3>Habilidades Técnicas</h3>
+                    <h3 class="subtitulo" data-translate data-translate-es="Habilidades Técnicas" data-translate-en="Technical Skills">Habilidades Técnicas</h3>
                     <div class="skill">
-                        <span>Pensamiento Analítico</span>
+                        <span data-translate data-translate-es="Pensamiento Analítico" data-translate-en="Analytical Thinking">Pensamiento Analítico</span>
                         <div class="barra-skill">
-                            <div class="progreso">
-                                <span></span>
-                            <div>
+                            <div class="progreso"></div>
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Manejo de Excel y Word</span>
+                        <span data-translate data-translate-es="Manejo de Excel y Word" data-translate-en="Excel and Word Management">Manejo de Excel y Word</span>
                         <div class="barra-skill">
-                            <div class="progreso">
-                                <span></span>
-                            </div>
+                            <div class="progreso"></div>
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Diseño de Interfaces</span>
+                        <span data-translate data-translate-es="Diseño de Interfaces" data-translate-en="Interface Design">Diseño de Interfaces</span>
                         <div class="barra-skill">
-                            <div class="progreso">
-                                <span></span>
-                            </div>
+                            <div class="progreso"></div>
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Devops de Azure</span>
+                        <span data-translate data-translate-es="Devops de Azure" data-translate-en="Azure Devops">Devops de Azure</span>
                         <div class="barra-skill">
-                            <div class="progreso">
-                                <span></span>
-
-                   
-                            <div></div>
-                                <h3>Habilidades Profesionales</h3>
-                                <div class="skill">
-                                    <span>Comunicación</span>
-                                    <div class="barra-skill">
-                                        <div class="progreso">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill">
-                                    <span>Trabajo en Equipo</span>
-                                    <div class="barra-skill">
-                                        <div class="progreso">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill">
-                                    <span>Creatividad</span>
-                                    <div class="barra-skill">
-                                        <div class="progreso">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill">
-                                    <span></span>
-                                    <div class="barra-skill">
-                                        <div class="progreso">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill">
-                                    <span></span>
-                                    <div class="barra-skill">
-                                        <div class="progreso">
-                                            <span></span>
-                                        </div>
+                            <div class="progreso"></div>
                         </div>
-                        
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="subtitulo" data-translate data-translate-es="Habilidades Profesionales" data-translate-en="Professional Skills">Habilidades Profesionales</h3>
+                    <div class="skill">
+                        <span data-translate data-translate-es="Comunicación" data-translate-en="Communication">Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span data-translate data-translate-es="Trabajo en Equipo" data-translate-en="Teamwork">Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span data-translate data-translate-es="Creatividad" data-translate-en="Creativity">Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    <div>
+    </section>
 
-     <SECCION CURRICULUM>
-    <!--<section id="curriculum" class="curriculum">
+    <!-- SECCION CASOS DE EXITO -->
+    <section id="casos" class="portfolio">
         <div class="contenido-seccion">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educación</h3>
-                    <div class="item izq">
-                        <h4>Ingenieria en sistemas y redes informáticas</h4>
-                        <span class="casa">Universidad Gerardo Barrios</span>
-                        <span class="fecha">en curso</span>
-                        <p>Estudiante de 4 año</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Inglés</h4>
-                        <span class="casa">E4CC</span>
-                        <span class="fecha">2022</span>
-                        <p>Nivel B2 alcanzado</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Bachillerato General</h4>
-                        <span class="casa">Instituto Nacional de Jiquilisco</span>
-                        <span class="fecha">2017-2018</span>
-                        <p>Titulo de Bachiller General</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                     <div class="item izq">
-                        <h4>Arte y Multimedia</h4>
-                        <span class="casa">Universidad de Oxford</span>
-                        <span class="fecha">2005 - 2008</span>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div> -->
-                <!--</div>
-
-                <div class="col derecha">
-                    <h3>Experiencia Academica</h3>
-                    <div class="item der">
-                        <h4>Front Developer</h4>
-                        <span class="casa">College Reminder</span>
-                        <span class="fecha">2023</span>
-                        <p>Aplicación móvil android para que los estudiantes puedan guardar recordatorios y tareas</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Front-end y Back-end</h4>
-                        <span class="casa">Educame</span>
-                        <span class="fecha">2022</span>
-                        <p>Aplicación web para educación financiera infantil</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                     <div class="item der">
-                        <h4>Front Developer</h4>
-                        <span class="casa">Nombre de Compañía</span>
-                        <span class="fecha">2005 - 2008</span>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- SECCION PORTFOLIO -->
-    </div>
-    <section id="portafolio" class="portfolio">
-        <div class="contenido-seccion">
-            <h2>Casos de éxito</h2>
+            <h2 class="titulo" data-translate data-translate-es="Casos de Éxito" data-translate-en="Success Stories">Casos de Éxito</h2>
             <div class="galeria">
                 <div class="proyecto">
                     <img src="img/MediAlert.jpg" alt="">
                     <div class="overlay">
                         <h3>MediAlertUGB-CRU</h3>
-                        <p>Aplicación Movil para Estudiantes UGB-CRU
-                        </p>
-                        <h5>Objetivo: 
-                        Para tener una rápida atención, para una persona que no se pueda movilizar rápidamente o presente un fuerte dolor</h5>
-                        <h4>Descripción General: 
-                        Por medio de esta aplicación los docentes, alumnos y personal de trabajo de UGB-CRU podrán ser atendido de una manera más rápida y efectiva</h4>
-                        <h7>Rol y responsabilidades:
-                        Documentadora, llevar a cabo el seguimiento del desarrollo de la aplicación</h7>
-                        <h8>Lenguajes de programación:
-                        </h8>
+                        <p data-translate data-translate-es="Aplicación Móvil para Estudiantes UGB-CRU" data-translate-en="Mobile Application for UGB-CRU Students">Aplicación Móvil para Estudiantes UGB-CRU</p>
+                        <h5 data-translate data-translate-es="Objetivo: Para tener una rápida atención, para una persona que no se pueda movilizar rápidamente o presente un fuerte dolor" data-translate-en="Objective: To provide quick attention for someone who cannot move quickly or is in severe pain">Objetivo: Para tener una rápida atención, para una persona que no se pueda movilizar rápidamente o presente un fuerte dolor</h5>
+                        <h4 data-translate data-translate-es="Descripción General: Por medio de esta aplicación los docentes, alumnos y personal de trabajo de UGB-CRU podrán ser atendidos de una manera más rápida y efectiva" data-translate-en="General Description: Through this application, teachers, students, and staff of UGB-CRU can be attended to more quickly and effectively">Descripción General: Por medio de esta aplicación los docentes, alumnos y personal de trabajo de UGB-CRU podrán ser atendidos de una manera más rápida y efectiva</h4>
                     </div>
-                  </div>
-        </div>
-    <!-- #</section> -->
-
-    <!-- #<section id="intereses" class="sobremi"> -->
-        <!-- #<div class="contenedor-intereses"> -->
-        <div class="interes">
-        <!-- #<i class="fa-solid fa-gamepad"> -->
-        </i>
-        <!-- #<span>JUEGOS</span>   -->
-        <!-- </div># -->
-        
-    </div> 
-</section>
-
-    <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>CONTACTO</h2>
-            <div class="fila">
-                <!-- Formulario -->
-                <div class="col">
-                    <input type="text" placeholder="Génesis Scarlet Hernández Hernández">
-                    <input type="text" placeholder="+50376367578">
-                    <input type="text" placeholder="USIS041221@ugb.edu.sv">
-                    <!--<input type="text" placeholder="Recuerda que en todos tus planes esta Dios">-->
-                    <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    <button>
-                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
-                        <span class="overlay"></span>
-                    </button> -->
-                <!-- #</div> -->
-                <!-- Mapa -->
-                <div class="col">
-                    <!-- <img src="#img/ubicacion.png" alt=""> -->
-                    <!-- #<div class="info"> -->
-                        <ul>
-                            <li>
-                                <!-- #<i class="fa-solid fa-location-dot"></i> -->
-                                <!-- Santa María, Usulutan# -->
-                            </li>
-                            <li>
-                                <!-- #<i class="fa-solid fa-mobile-screen"></i> -->
-                                <!-- Llamanos: 7636-7578# -->
-                            </li>
-                            <li>
-                                <!-- #<i class="fa-solid fa-envelope"></i> -->
-                                <!-- Email: scarletgenesis2807@gmail.com# -->
-                            </li>
-                        </ul>
-                    <!-- </div># -->
+                </div>
+                <div class="proyecto">
+                    <img src="img/Yourlogo.png" alt="">
+                    <div class="overlay">
+                        <h3>Your Logo</h3>
+                        <p data-translate data-translate-es="Desarrollo de Logos para Empresas" data-translate-en="Logo Development for Companies">Desarrollo de Logos para Empresas</p>
+                        <h5 data-translate data-translate-es="Objetivo: Generar una imagen visual creativa que sea capaz de representar la identidad corporativa de la empresa o emprendimiento, brindando a sus clientes una impresión visual profesional y de confianza" data-translate-en="Objective: Generate a creative visual image capable of representing the corporate identity of the company or venture, providing customers with a professional and trustworthy visual impression">Objetivo: Generar una imagen visual creativa que sea capaz de representar la identidad corporativa de la empresa o emprendimiento, brindando a sus clientes una impresión visual profesional y de confianza</h5>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/Yourname.png" alt="">
+                    <div class="overlay">
+                        <h3>Your Name</h3>
+                        <p data-translate data-translate-es="Desarrollo de Nombre Creativo para Empresas" data-translate-en="Creative Name Development for Companies">Desarrollo de Nombre Creativo para Empresas</p>
+                        <h5 data-translate data-translate-es="Objetivo: Generar un nombre creativo que se capaz de representar la esencia e identidad de la empresa o emprendimiento, brindando a sus clientes una identificación llamativa y recordable" data-translate-en="Objective: Generate a creative name capable of representing the essence and identity of the company or venture, providing customers with an attractive and memorable identification">Objetivo: Generar un nombre creativo que se capaz de representar la esencia e identidad de la empresa o emprendimiento, brindando a sus clientes una identificación llamativa y recordable</h5>
+                    </div>
                 </div>
             </div>
         </div>
-    <!-- </section># -->
+    </section>
 
-    <!-- footer -->
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <!-- <a href="#https://www.facebook.com/profile.php?id=100013175088525"><i class="fa-brands fa-facebook-f"></i></a> -->
-            <!--<a href="#"><i class="fa-brands fa-twitter"></i></a>-->
-            <!-- <a href="#"><i class="fa-brands fa-skype"></i></a> -->
-            <!--<a href="#"><i class="fa-brands fa-linkedin-in"></i></a> -->
-            <!--<a href="#"><i class="fa-solid fa-rss"></i></a>-->
-            <div class="footer">
-              <img src="img/energia-atomica.png" alt="" >
-            <p>
-                2024 Génesis Hernández, derechos de autor reservados
-            </p>
+    <!-- FOOTER -->
+    <footer id="contacto" class="contacto">
+        <div class="footer">
+            <div class="marca-logo">
+                <img src="img/_Marca_.png" alt="Marca Logo" width="80px">
+            </div>
+            <div class="contenedor-footer">
+                <div class="info">
+                    <h3 data-translate data-translate-es="Información Contacto" data-translate-en="Contact Information">Información Contacto</h3>
+                    <p>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>gscarleth19@gmail.com</span>
+                    </p>
+                    <p>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>7893-2926</span>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
